@@ -1,0 +1,23 @@
+<nz-spin [nzSpinning]="loading">
+  <h3>Leagues</h3>
+  <nz-table #basicTable [nzData]="leagues">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Director</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td routerLink="/league/{{data.id}}">{{ data.name }}</td>
+      <td>{{ data.address }}</td>
+      <td>{{ data.director }}</td>
+      <td>
+        <a>Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+</nz-spin>
